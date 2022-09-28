@@ -1,6 +1,12 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { createEvent } from "../../redux/actions";
 
 const CreateEvent = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [formInput, setFormInput] = useState({
     eventName: "",
     hostName: "",
@@ -11,11 +17,14 @@ const CreateEvent = () => {
   });
 
   const onChange = (e) => {
-    setFormInput({ ...formInput, [e.event.name]: e.event.value });
+    setFormInput({ ...formInput, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
+    console.log(formInput);
+    dispatch(createEvent(formInput));
+    navigate("/event");
   };
 
   return (
