@@ -1,10 +1,14 @@
-.container {
+.mobile {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 813px;
   overflow-y: scroll;
   background: #f6f2ff;
+}
+
+.desktop {
+  display: none;
 }
 
 .titles {
@@ -59,4 +63,40 @@
   font-size: 16px;
   line-height: 18px;
   text-align: right;
+}
+
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 982px;
+    overflow-y: scroll;
+    background: #f6f2ff;
+  }
+
+  .image {
+    margin: 0;
+    width: 440px;
+    height: 775.69px;
+  }
+
+  .titles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+    text-align: right;
+  }
+
+  .subtitle {
+    width: 500px;
+    margin: 16px 0;
+    text-align: right;
+  }
 }
