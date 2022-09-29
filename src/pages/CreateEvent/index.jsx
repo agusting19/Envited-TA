@@ -63,7 +63,7 @@ const CreateEvent = () => {
         />
         <input
           type="text"
-          name="location"
+          name="City, state, country"
           placeholder="Location"
           onChange={onChange}
           className={styles.form__input}
